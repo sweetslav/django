@@ -34,6 +34,7 @@
 
             <table class="table-content" border=0 cellpadding="0" cellspacing="0">
                 <tr>
+
                     <!-- Sidebar слева -->
                     <td valign="top" class="left-chapters">
                         <ul id="leftchapters">
@@ -51,10 +52,14 @@
                                    href="https://www.youtube.com/channel/UClJzWfGWuGJL2t-3dYKcHTA/playlists"
                                    target="_blank" rel="nofollow"></a>
                             </li>
+
+                            <li>{% show_all_tags %}</li>
                         </ul>
                     </td>
                     <!-- Конец Sidebar'а -->
+
                     <td valign="top" class="content">
+
                         <!-- Хлебные крошки -->
                         {% block breadcrumbs %}
                         {% endblock %}
@@ -71,6 +76,7 @@
             </table>
         </td>
     </tr>
+
     <!-- Footer -->
     <tr>
         <td valign=top>
@@ -82,5 +88,6 @@
     </tr>
 </table>
 <!-- Конец footer'а и страницы -->
+
 </body>
 </html>
