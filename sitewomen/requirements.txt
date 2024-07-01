@@ -43,6 +43,8 @@ executing==2.0.1
     # via
     #   -r requirements.in
     #   stack-data
+gunicorn==22.0.0
+    # via -r requirements.in
 ipython==8.25.0
     # via -r requirements.in
 jedi==0.19.1
@@ -57,6 +59,7 @@ packaging==24.1
     # via
     #   -r requirements.in
     #   build
+    #   gunicorn
 parso==0.8.4
     # via
     #   -r requirements.in

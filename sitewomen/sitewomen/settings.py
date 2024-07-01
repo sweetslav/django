@@ -1,20 +1,18 @@
-from pathlib import Path
 import os
+from pathlib import Path
 from dotenv import load_dotenv
+
+# Загрузка переменных окружения из .env файла
+env_path = Path('.') / 'sitewomen' / '.env'
+load_dotenv(dotenv_path=env_path)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env_file = os.path.join(BASE_DIR, '.env')
-
-if os.path.exists(env_file):
-    load_dotenv(env_file)
-
-
+# SECRET_KEY = os.getenv('SECRET_KEY')
 SECRET_KEY = 'django-insecure-ywt^i-jce1cq%5q4s^p0130-h9x9vdmvmge-vf8g+htkga+=71'
+DEBUG = os.getenv('DEBUG', 'True') == 'False'
 
-DEBUG = os.getenv('DEBUG') == 'True'
-
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 INTERNAL_IPS = ["127.0.0.1"]
 
 
@@ -85,8 +83,8 @@ DATABASES = {
         # 'NAME': 'exampledb',
         # 'USER': 'exampleuser',
         # 'PASSWORD': 'exampleuser',
-        # 'HOST': 'db',
-        'HOST': 'localhost',
+        # 'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '',
     }
 }
@@ -117,8 +115,8 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
-STATIC_ROOT = '/app/sitewomen/staticfiles/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
